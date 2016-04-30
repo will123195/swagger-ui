@@ -21633,6 +21633,8 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
       }
     }
     if (signatureModel) {
+      // doesn't make sense to say response properties are optional
+      signatureModel.signature = signatureModel.signature.split('<span class="propOptKey">(optional)</span>').join('');
       responseSignatureView = new SwaggerUi.Views.SignatureView({
         model: signatureModel,
         router: this.router,

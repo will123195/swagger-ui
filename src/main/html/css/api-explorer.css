@@ -495,13 +495,13 @@
     }
 }
 
-.swagger-section .operations .model-signature .description .propName {
+.swagger-section .operations .model-signature .description {
     display: table-cell;
     font-weight: 700
 }
 
 @media (min-width: 992px) {
-    .swagger-section .operations .model-signature .description .propName {
+    .swagger-section .operations .model-signature .description {
         display: block
     }
 }
@@ -509,6 +509,11 @@
 .swagger-section .operations .model-signature .description .propOptKey {
     opacity: .7;
     display: block
+}
+
+.propName {
+    display: inline-block;
+    margin-right: 6px;
 }
 
 @media (min-width: 992px) {

@@ -87,8 +87,9 @@
             function addApiKeyAuthorization() {
                 var key = encodeURIComponent($('#input_apiKey')[0].value);
                 if (key && key.trim() != "") {
-                    var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", "Bearer " + key, "header");
-                    window.swaggerUi.api.clientAuthorizations.add("key", apiKeyAuth);
+                    // TODO: make these values dynamic
+                    var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization("Authorization", 'Bearer ' + key, "header");
+                    window.swaggerUi.api.clientAuthorizations.add("token", apiKeyAuth);
                     log("added key " + key);
                 }
             }
@@ -200,7 +201,7 @@
 </head>
 
 <body class="page-docs" style="zoom: 1;">
-<header class="site-header">
+<header class="site-header" style="display:none;">
     <nav role="navigation" class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">

@@ -16,6 +16,10 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
   render: function () {
     var methods = {};
 
+    // Alphabetize the operations in this section/tag
+    this.model.operationsArray.sort(function (a, b) {
+      return a.summary.localeCompare(b.summary);
+    });
 
     $(this.el).html(Handlebars.templates.resource(this.model));
     // Render each operation
